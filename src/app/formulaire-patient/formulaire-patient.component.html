@@ -1,0 +1,20 @@
+<!--form   (ngSubmit)="addPatientformulaire(newPatientForm)"
+        #newPatientForm="ngform"
+        novalidate>
+  <p>Prénom : <input name="patientForname" ngModel required></p>
+  <p>Nom : <input name="patientName" ngModel required></p>
+  <p>Sexe :
+    <select name="patientSex" ngModel required>
+      <option value="M" selected="selected">Homme</option>
+      <option value="F">Femme</option>
+    </select></p>
+  <p>N° de sécurité sociale : <input name="patientNumber" ngModel required></p><br/>
+  <p><b>Adresse : </b></p><br/>
+  <p>Rue : <input name="patientStreet" ngModel required></p>
+  <p>Code postal : <input name="patientPostalCode" ngModel required></p>
+  <p>Ville : <input name="patientCity" ngModel required></p>
+  <p>étage (facultatif) : <input name="patientFloor" ngModel></p><br/>
+  <p><input style="width : 800px" type="submit" value="Valider"/></p>
+</form>
+<!--formulaire-patient></formulaire-patient-->
+

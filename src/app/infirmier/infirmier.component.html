@@ -1,0 +1,141 @@
+<mat-tab-group>
+  <mat-tab label="Patients Non affectés">
+    <div class="pNaffect">
+      <mat-toolbar>
+        <span>Liste des patients non affactés</span>
+      </mat-toolbar>
+      <app-patient></app-patient>
+    </div>
+    <div class="ajoupat">
+      <!--form  #newPatientForm="ngForm"  (ngSubmit)="addPatient(newPatientForm)" novalidate>
+        <p>Prénom : <input name="patientForname" ngModel required></p>
+        <p>Nom : <input name="patientName" ngModel required></p>
+        <p>Sexe :
+          <select name="patientSex" ngModel required>
+            <option value="M" selected="selected">Homme</option>
+            <option value="F">Femme</option>
+          </select></p>
+        <p>N° de sécurité sociale : <input name="patientNumber" ngModel required></p><br/>
+        <p><b>Adresse : </b></p><br/>
+        <p>Rue : <input name="patientStreet" ngModel required></p>
+        <p>Code postal : <input name="patientPostalCode" ngModel required></p>
+        <p>Ville : <input name="patientCity" ngModel required></p>
+        <p>étage (facultatif) : <input name="patientFloor" ngModel></p><br/>
+        <p><input style="width : 800px" type="submit" value="Valider"/></p>
+      </form-->
+      <mat-toolbar>
+        <span>Ajouter un patient</span>
+      </mat-toolbar>
+      <div class="example-container">
+        <form #form>
+          <mat-form-field>
+            <input required minlength="3" matInput placeholder="Nom" [(ngModel)]="patientName" name="patientName">
+          </mat-form-field>
+
+          <mat-form-field>
+            <input required minlength="3" matInput placeholder="Prénom" [(ngModel)]="patientForName" name="patientForName">
+          </mat-form-field>
+
+          <mat-form-field>
+            <input required minlength="15" matInput type="text" placeholder="Numéro sécurité sociale" [(ngModel)]="patientNumber" name="patientNumber">
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-select required placeholder="Sexe" [(ngModel)]="patientSex" name="patientSex">
+              <mat-option aria-selected="true" value="F">Femme / Female</mat-option>
+              <mat-option value="M">Homme / Male</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input required matInput type="date" placeholder="Date de naissance" [(ngModel)]="patientBirthday" name="patientBirthday">
+          </mat-form-field>
+
+          <mat-form-field>
+            <input required min="1" matInput type="number" placeholder="Etage" [(ngModel)]="patientFloor" name="patientFloor">
+          </mat-form-field>
+
+          <mat-form-field>
+            <input required min="1" matInput type="text" placeholder="Numéro de la rue" [(ngModel)]="patientStreetNumber" name="patientStreetNumber">
+          </mat-form-field>
+
+          <mat-form-field>
+            <input required minlength="1" matInput placeholder="Rue" name="patientStreet" [(ngModel)]="patientStreet">
+          </mat-form-field>
+
+          <mat-form-field>
+            <input required minlength="3" matInput placeholder="Code Postal" [(ngModel)]="patientPostalCode" name="patientPostalCode">
+          </mat-form-field>
+
+          <mat-form-field>
+            <input required minlength="1" matInput placeholder="Ville" [(ngModel)]="patientCity" name="patientCity">
+          </mat-form-field>
+        </form>
+
+        <div style="text-align: center">
+          <button (click)="submit()" color='primary' mat-button mat-raised-button>Ajouter</button>
+        </div>
+      </div>
+
+    </div>
+  </mat-tab>
+  <mat-tab label="Infirmiers">
+    <mat-tab-group>
+      <mat-tab  class="tabs" *ngFor="let inf of this.infirmier" label="​{{inf.id}} {{inf.nom}} {{inf['prénom']}}">
+        <div class="page">
+          <div class="tabpatient">
+            <div class="image">
+              <img src={{photo}}{{inf.photo}}>
+            </div >
+            <div class="pres">
+              Bonjour {{inf['prénom']}}
+              <br/>
+              Aujourd'hui, vous avez {{inf.patients.length}} patients<br/>
+            </div>
+          </div>
+          <div class="tableau">
+            <table>
+              <thead>
+              <td>Nom</td>
+              <td>Prénom</td>
+              <td>Sexe</td>
+              <td>Numéro de sécurité</td>
+              <td>Adresse</td>
+              </thead>
+              <tbody>
+              <tr *ngFor="let pat of inf.patients" class="success">
+                <td>{{pat.nom}}</td>
+                <td>{{pat['prénom']}}</td>
+                <td>{{pat.sexe}}</td>
+                <td>{{pat['numéroSécuritéSociale']}}</td>
+                <td>{{pat['adresse.étage']}} {{pat['adresse.numéro']}} {{pat.adresse.rue}}, {{pat.adresse.codePostal}} {{pat.adresse.ville}}</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-tab>
+</mat-tab-group>
+
+
+<!--table>
+  <thead>
+  <td>Photo</td>
+  <td>Id</td>
+  <td>Nom</td>
+  <td>Prénom</td>
+  <td>Adresse</td>
+  </thead>
+  <tbody>
+  <tr *ngFor="let inf of this.infirmier">
+    <td ><img src={{photo}}{{inf.photo}}></td>
+    <td>​{{inf.id}}</td>
+    <td>​{{inf.nom}}</td>
+    <td>{{inf['prénom']}}</td>
+    <td>{{inf['adresse.étage']}} {{inf['adresse.numéro']}} {{inf.adresse.rue}}, {{inf.adresse.codePostal}} {{inf.adresse.ville}}</td>
+  </tr>
+  </tbody>
+</table-->
+<!--app-patient></--app-patient-->

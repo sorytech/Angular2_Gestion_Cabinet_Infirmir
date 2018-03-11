@@ -1,0 +1,80 @@
+img {
+  max-width: 185px;
+  max-height: 200px;
+  float:left;
+  vertical-align: middle;
+}
+.pres{
+  margin-left: 150px;
+  font-size: 20px;
+}
+.presfac{
+  margin-top: 20px;
+  margin-left: 20px;
+  font-size: 20px;
+}
+.image{
+  float: left;
+}
+
+.page{
+  padding: 55px;
+  background-color: #f8f8f8;
+
+}
+.tableau{
+  margin-top: 150px;
+}
+mat-tab-group{
+  width: 100%;
+  background-color:whitesmoke;
+}
+.pres{
+  margin-left: 300px;
+}
+table {
+  border: 2px solid black;
+  height : 133px;
+  padding: 8px;
+  border-radius: 20px;
+  width: 100%;
+  text-align: center;
+
+}
+td {
+  padding: 5px;
+  border: 2px solid black;
+}
+tr:hover {
+  background-color: #A9BCF5;
+}
+body {
+  margin: 10px;
+  font: 14px Arial;
+  color: darkblue;
+}
+
+thead{
+  font-size: 20px;
+  color: darkblue;;
+  text-align: center;
+  font-weight: bold;
+}
+head{
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  background-color: #aaaaaa;
+}
+mat-tab{
+  color: black;
+}
+.pNaffect{
+  margin-top: 10px;
+}
+.ajoupat{
+  margin-top: 200px;
+}
+mat-toolbar{
+  text-align: center;
+}

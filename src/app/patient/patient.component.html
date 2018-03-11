@@ -1,0 +1,57 @@
+  <table>
+    <thead>
+      <td>Nom</td>
+      <td>Prénom</td>
+      <td>Sexe</td>
+      <td>Numéro de sécurité</td>
+      <td>Adresse</td>
+      <td>Affecter</td>
+    </thead>
+    <tbody>
+    <tr *ngFor="let pat of this.patient" class="success">
+      <td>{{pat.nom}}</td>
+      <td>{{pat['prénom']}}</td>
+      <td>{{pat.sexe}}</td>
+      <td>{{pat['numéroSécuritéSociale']}}</td>
+      <td>{{pat['adresse.étage']}} {{pat['adresse.numéro']}} {{pat.adresse.rue}}, {{pat.adresse.codePostal}} {{pat.adresse.ville}}</td>
+      <td >
+        <mat-select placeholder="Select">
+          <mat-option *ngFor="let inf of this.infirmier" [value]="inf.id">{{inf.id}}</mat-option>
+        </mat-select>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+<!--div class="page">
+  <div class="infirmier">
+    <div class="image">
+      <img src="image/{ns1:cabinet/ns1:infirmiers/ns1:infirmier[@id=$destinedId]/ns1:photo}" alt="Smiley face" width="100" height="100"/>
+    </div>
+    <div class="imagecabinet">
+      <img src="image/infirmiere.jpg" alt="Smiley face" width="100" height="100"/>
+    </div>
+    <div class="pres">
+      Bonjour <xsl:value-of select="ns1:cabinet/ns1:infirmiers/ns1:infirmier[@id=$destinedId]/ns1:prénom/text()"/>
+      <br/>
+      Aujourd'hui, vous avez <xsl:value-of select="count($visitesDuJour)"/> patients<br/>
+    </div>
+  </div>
+  <!--Création d'un tableau qui doit contenir les information des patients d'une infirmière -->
+  <!--table>
+    <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Adresse</th>
+      <th>Soins</th>
+      <th>Facture</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!--Appelle de template pour récupérer les information des patients d'une infirmière -->
+    <!--xsl:apply-templates select="ns1:cabinet/ns1:patients/ns1:patient"/>
+    </tbody>
+  </table>
+</div-->
+
+
